@@ -1,0 +1,6 @@
+	Universidad Politécnica Salesiana
+		Seminario Profesional
+
+1ra sesión-21/Sep/2020: GitHub 
+2da sesión-22/Sep/2020: Fundamentos de JavaScript
+
