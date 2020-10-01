@@ -1,5 +1,6 @@
-const bodyParser = require("body-parser")
-const express = require("express")
+const express = require('express')
+const bodyParser = require('body-parser')
+const response = require('./network/response')
 const router = express.Router()
 
 var app = express()
@@ -8,16 +9,16 @@ app.use( bodyParser.urlencoded( {extended:false}))
 app.use( router )
 
 router.get('/carrera', function(req, res){
-
-    console.log( req.headers )
-    res.send('Lista de Carreras de la UPS')
+    
+    response.sucess( req, res, 'Lista de Carrera de la UPS.', 200 )
+    
 })
 
 router.post('/carrera' , function( req, res ){
     if (req.query.error == 'ok'){
-        res.status(500).send( { tipo_error:1, mensaje_error:'Error en el Servidor.', mensaje_exito: '' } )
+        response.error( req, res, 'Error al ingresar la Carrera.', 500 )
     } else {
-        res.status(200).send( { tipo_error:0, mensaje_error:'', mensaje_exito: 'Todo ok.'})
+        response.sucess( req, res, 'Ingreso de Carrera exitoso.', 201 )
     }
    
 })
