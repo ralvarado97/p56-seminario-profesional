@@ -14,9 +14,9 @@ function addCarrera( nombre, abreviatura, descripcion){
 }
 
 
-function getCarreras(){
+function getCarreras( filtroCarrera ){
     return new Promise( (resolve, reject ) => {
-        resolve( storage.get() )
+        resolve( storage.get( filtroCarrera ) )
     })
 }
 
